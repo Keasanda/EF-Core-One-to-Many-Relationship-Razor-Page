@@ -1,0 +1,27 @@
+-- Addresses Table
+INSERT INTO Addresses (Street, City, State, ZipCode)
+VALUES
+    ('123 Main St', 'Cityville', 'CA', '12345'),
+    ('456 Oak St', 'Townsville', 'NY', '67890'),
+    ('789 Pine St', 'Villagetown', 'TX', '34567');
+
+-- Companies Table
+INSERT INTO Companies (CompanyName, AddressID)
+VALUES
+    ('Tech Solutions', 1),
+    ('ABC Industries', 2),
+    ('Global Innovations', 3);
+
+-- Person Table
+INSERT INTO Person (Name, Surname, Email, AddressID)
+VALUES
+    ('John', 'Doe', 'john.doe@email.com', 1),
+    ('Jane', 'Smith', 'jane.smith@email.com', 2),
+    ('Bob', 'Johnson', 'bob.johnson@email.com', 3);
+
+-- Contacts Table
+INSERT INTO Contacts (PersonID, CompanyID, Position, TelephoneNumber)
+VALUES
+    (1, 1, 'Manager', '123-456-7890'),
+    (2, 2, 'Developer', '987-654-3210'),
+    (3, 3, 'Designer', '555-123-4567');
