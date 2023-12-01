@@ -1,0 +1,34 @@
+﻿@page
+@model CoopManagement.Pages.ManagementView.EmoloyeeDetailsModel
+
+
+@{
+    ViewData["Title"] = "EmoloyeeDetails";
+}
+
+<h1>Index</h1>
+
+
+
+
+<h2>Employee Details</h2>
+
+<div>
+    <h3>Person</h3>
+    <p>ID: @Model.EmployeeData.PersonID</p>
+    <p>Name: @Model.EmployeeData.Name</p>
+    <p>Surname: @Model.EmployeeData.Surname</p>
+    <p>Email: @Model.EmployeeData.Email</p>
+</div>
+
+@if (Model.EmployeeData.Address != null)
+{
+    <div>
+        <h3>Address</h3>
+        <p>ID: @Model.EmployeeData.Address.AddressID</p>
+        <p>Street: @Model.EmployeeData.Address.Street</p>
+        <p>City: @Model.EmployeeData.Address.City</p>
+        <p>State: @Model.EmployeeData.Address.State</p>
+        <p>Zip Code: @Model.EmployeeData.Address.ZipCode</p>
+    </div>
+}

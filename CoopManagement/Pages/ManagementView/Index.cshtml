@@ -1,0 +1,87 @@
+﻿           @page
+@model CoopManagement.Pages.ManagementView.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="./EmoloyeeCreate" class="btn btn-primary" >Create New</a>
+</p>
+
+<form method="get">
+
+<div class="input-group">
+    <input class="form-control" asp-for="SearchTerm"/>
+    <div class="input-group-append">
+
+<button type="submit" class="btn btn-primary"> Search   </button>
+
+    </div>
+
+
+
+</div>
+
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].PersonID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].Address.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPeople[0].AddressID)
+            </th>
+            <th>
+               power
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AllPeople)
+        {
+            <tr onclick="location.href='@Url.Page("/ManagementView/EmployeeDetails", new { id = item.PersonID })'">
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressID)
+                </td>
+                <td>
+                    <a asp-page="./EmoloyeeDetails" asp-route-id="@item.PersonID">EmployeeDetails</a>
+                    <a asp-page="./EmoloyeeUpdate" asp-route-id="@item.PersonID"> Update</a>
+                    <a asp-page="./EmoloyeeDelete" asp-route-id="@item.PersonID"> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

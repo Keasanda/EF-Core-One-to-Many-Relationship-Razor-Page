@@ -1,0 +1,41 @@
+﻿@page
+@model CoopManagement.Pages.ManagementView.EmoloyeeDeleteModel
+@{
+    ViewData["Title"] = "EmoloyeeDelete";
+}
+
+<h1>DELETE  </h1>
+
+
+<div>
+    <h3>Person</h3>
+    <p>ID: @Model.NewEmployee.PersonID</p>
+    <p>Name: @Model.NewEmployee.Name</p>
+    <p>Surname: @Model.NewEmployee.Surname</p>
+    <p>Email: @Model.NewEmployee.Email</p>
+</div>
+
+@if (Model.NewEmployee.Address != null)
+{
+    <div>
+        <h3>Address</h3>
+        <p>ID: @Model.NewEmployee.Address.AddressID</p>
+        <p>Street: @Model.NewEmployee.Address.Street</p>
+        <p>City: @Model.NewEmployee.Address.City</p>
+        <p>State: @Model.NewEmployee.Address.State</p>
+        <p>Zip Code: @Model.NewEmployee.Address.ZipCode</p>
+    </div>
+
+
+}
+
+<div class="clas-body">
+
+    <form method="post">
+
+    <button type="submit" class="btn btn-primary"> Delete  </button> 
+
+    </form>
+</div>  
+
+    

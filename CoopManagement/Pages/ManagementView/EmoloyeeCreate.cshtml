@@ -1,0 +1,77 @@
+﻿@page
+@model CoopManagement.Pages.ManagementView.EmoloyeeCreatesModel
+@{
+    ViewData["Title"] = "EmoloyeeCreate";
+}
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col col-md-6 offset-md-3">
+        <form method="post"> 
+            <legend> Add EMployee   </legend>
+
+                <div class="mb-3">
+                    <label for="txtName" class="form-label">Name</label>
+                    <input type="text"  asp-for="NewEmployee.Name"  class="form-control" id="txtName" aria-describedby="emailHelp">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="txtSurname" class="form-label">Surname</label>
+                    <input type="text" asp-for="NewEmployee.Surname" class="form-control" id="txtSurname" aria-describedby="emailHelp">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="txtEmail" class="form-label">Email</label>
+                    <input type="email" asp-for="NewEmployee.Email" class="form-control" id="txtEmail" aria-describedby="emailHelp">
+                </div>
+
+              
+                
+                    
+                    <div class=" row">
+
+                        <legend> Add Adress</legend>
+
+
+                        <div class="mb-3">
+                            <label for="txtStreet" class="form-label">Street</label>
+                            <input type="text" asp-for="NewEmployee.Address.Street" class="form-control" id="txtStreet" aria-describedby="emailHelp">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="txtCity" class="form-label">City</label>
+                            <input type="text" asp-for="NewEmployee.Address.City" class="form-control" id="txtCity" aria-describedby="emailHelp">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="txtState" class="form-label">State</label>
+                            <input type="text" asp-for="NewEmployee.Address.State" class="form-control" id="txtState" aria-describedby="emailHelp">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="txtZipCode" class="form-label">ZipCode</label>
+                            <input type="text" asp-for="NewEmployee.Address.ZipCode" class="form-control" id="txtZipCode" aria-describedby="emailHelp">
+                        </div>
+
+
+
+                    </div>
+
+                
+
+                <button type="submit" class="btn btn-primary"> Add    </button>
+
+        </form>
+
+
+    </div>
+</div>
+
+</div>
